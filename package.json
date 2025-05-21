@@ -9,7 +9,7 @@
     "test": "ng test",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs",
     "build:ssr": "ng build && ng run frontend:server",
-    "vercel-build": "npm run build:ssr"
+    "vercel-build": "npm install && npm run build:ssr"
   },
   "private": true,
   "dependencies": {
@@ -42,5 +42,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
