@@ -1,5 +1,8 @@
 {
   "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist/frontend/browser",
+  "installCommand": "npm install",
   "builds": [
     {
       "src": "server.ts",
