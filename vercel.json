@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": "dist/frontend/browser",
-  "installCommand": "npm install",
   "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/frontend/browser"
+      }
+    },
     {
       "src": "server.ts",
       "use": "@vercel/node"
@@ -14,10 +18,5 @@
       "src": "/(.*)",
       "dest": "/server.ts"
     }
-  ],
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  }
+  ]
 } 
