@@ -1,18 +1,12 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/frontend/browser"
-      }
-    }
-  ],
+  "framework": "angular",
+  "buildCommand": "ng build --configuration production",
+  "outputDirectory": "dist/frontend/browser",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "/index.html"
     }
   ]
 } 
