@@ -5,24 +5,27 @@
   "outputDirectory": "dist/frontend/browser",
   "routes": [
     {
-      "handle": "filesystem"
+      "src": "^/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
-      "src": "/assets/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "continue": true
+      "src": "^/favicon.ico",
+      "dest": "/favicon.ico"
     },
     {
-      "src": "/(.*\\.js)",
-      "headers": {
-        "content-type": "application/javascript"
-      },
-      "continue": true
+      "src": "^/manifest.json",
+      "dest": "/manifest.json"
     },
     {
-      "src": "/(.*)",
+      "src": "^/ngsw-worker.js",
+      "dest": "/ngsw-worker.js"
+    },
+    {
+      "src": "^/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|json))$",
+      "dest": "/$1"
+    },
+    {
+      "src": "^/(.*)",
       "dest": "/index.html"
     }
   ]
